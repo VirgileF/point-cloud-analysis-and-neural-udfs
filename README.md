@@ -2,13 +2,12 @@
 
 Code repository supporting preprint https://hal.science/IMT/hal-04568278v1
 
-## Download ShapeNet data
+## Data
 
-Link towards meshes from ShapeNet dataset
-Files in .stl format
+Link towards preprocessed meshes in .stl format
 https://www.dropbox.com/scl/fo/85niz2p9qis9subfbxijz/AKWMU92jwh0c4PXCWIhUNfg?rlkey=rfgfs3zozsdbmpd4nu6zga42z&e=3&st=7s7a3zgz&dl=0
 
-Meshes are built from the ShapeNet dataset available here: https://shapenet.org/
+These meshes are built from the ShapeNet dataset https://shapenet.org/
 
 ## Requirements :
 
