@@ -67,8 +67,7 @@ def compute_neighborhoods(
         
         assert point_cloud is not None
         assert k_neighbors is not None
-
-        # index point cloud in KdTree
+        
         kdtree = KDTree(point_cloud)
         neighborhoods_list = kdtree.query(point_cloud, k=k_neighbors, return_distance=False).tolist()
         neighborhoods_list = [np.array(neighborhood) for neighborhood in neighborhoods_list]
@@ -160,8 +159,6 @@ def compute_pauly_indicator(X):
 
 def compute_pauly_indicator_on_surface(point_cloud, neighborhoods_list):
 
-    t0 = T.time()
-
     indicators = np.zeros(len(neighborhoods_list))
     for i, indices in enumerate(neighborhoods_list):
 
@@ -196,8 +193,6 @@ def compute_ks_p_value(X, centroid):
     return p_value
 
 def compute_ks_pvalues_on_surface(point_cloud, neighborhoods_list):
-
-    t0 = T.time()
 
     ks_p_values = np.zeros(len(neighborhoods_list))
     for i, indices in enumerate(neighborhoods_list):
