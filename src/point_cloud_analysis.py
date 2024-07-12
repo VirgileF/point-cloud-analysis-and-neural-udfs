@@ -149,11 +149,7 @@ def compute_pauly_indicator(X):
     lambdas, _ = np.linalg.eig(V)
     
     # Variation ratio
-    ratio = lambdas.min()/lambdas.sum()
-
-    # Rescaling [0,1/D] -> [0,1] where D is the dimension of the ambient space
-    dim = X.shape[1]
-    indicator = ratio * dim
+    indicator = lambdas.min()/lambdas.sum()
     
     return indicator
 
@@ -202,3 +198,24 @@ def compute_ks_pvalues_on_surface(point_cloud, neighborhoods_list):
         ks_p_values[i] = compute_ks_p_value(X, centroid)
     
     return ks_p_values
+
+def compute_indicator_on_surface(surface_points, indicator, k_neighbors):
+
+    # compute neighborhoods
+    neighborhoods_list = compute_neighborhoods(
+        point_cloud=surface_points, 
+        method='nn',
+        k_neighbors=k_neighbors
+    )
+    
+    if indicator == 'ks_log_pvalues':
+        # compute KS p-values
+        p_values_ks = compute_ks_pvalues_on_surface(surface_points, neighborhoods_list)
+        # rescale p-values
+        indicator_values = -np.log10(p_values_ks)
+        
+    elif indicator == 'pauly':
+        # compute pauly indicator
+        indicator_values = compute_pauly_indicator_on_surface(surface_points, neighborhoods_list)
+    
+    return indicator_values 
