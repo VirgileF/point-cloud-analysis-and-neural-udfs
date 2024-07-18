@@ -1,6 +1,6 @@
 {
-    "path_to_meshes"                    : "/Users/virgilefoy/Data/ShapeNet_meshes/tables_25",
-    "path_to_results"                   : "/Users/virgilefoy/Data/ShapeNet_neural_udfs/xp_test_git_tables25",   
+    "path_to_meshes"                    : "/Users/virgilefoy/Data/ShapeNet_meshes/chairs_100",
+    "path_to_results"                   : "/Users/virgilefoy/Data/ShapeNet_neural_udfs/xp_test_git_chairs25",   
     "n_cpus"                            : 1,
 
         "training_parameters_values"    : {

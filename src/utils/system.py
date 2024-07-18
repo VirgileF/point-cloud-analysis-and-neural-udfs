@@ -25,6 +25,13 @@ def dump_json(python_dict, path):
     with open(path, 'w') as json_file:
         json.dump(python_dict, json_file, indent=4)
 
+def load_pickle(path):
+
+    with open(path, 'rb') as pickle_file:
+        python_object = pickle.load(pickle_file)
+
+    return python_object
+
 def load_json(path):
 
     # Read the JSON file and load it into a dictionary
