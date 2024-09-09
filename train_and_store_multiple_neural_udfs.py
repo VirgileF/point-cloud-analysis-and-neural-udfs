@@ -113,6 +113,9 @@ def train_and_store_multiple_neural_udfs(experiment_parameters):
     total_runtime = T.time()-t0
     experiment_parameters['total_runtime'] = total_runtime
     print(f'Total runtime for all the neural UDFs: {np.round(total_runtime,1)} s.')
+
+    # Print path to results
+    print(f"Trained {len(combinations_list)} neural UDFs and stored them in {os.path.join(experiment_parameters['path_to_results'], 'neural_udfs')}")
     
     # Store xp parameters (with total runtime)
     dump_json(experiment_parameters, os.path.join(experiment_parameters['path_to_results'], 'experiment_parameters.json'))

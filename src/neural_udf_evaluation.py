@@ -28,13 +28,13 @@ def sample_uniform_3d_sphere(n_samples, radius):
 
     return points_on_sphere
 
-def load_results_from_single_run(path_to_results, run_index):
+def load_results_from_single_run(path_to_results, neural_udf_index):
     
     # load experiment params
     experiment_parameters = load_json(os.path.join(path_to_results, 'experiment_parameters.json'))
 
     # load training parameters
-    path_to_neural_udf = os.path.join(path_to_results, f'neural_udfs/neural_udf_{run_index}')
+    path_to_neural_udf = os.path.join(path_to_results, f'neural_udfs/neural_udf_{neural_udf_index}')
     training_parameters = load_json(os.path.join(path_to_neural_udf, 'training_parameters.json'))
         
     # load results

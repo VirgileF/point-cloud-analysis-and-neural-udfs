@@ -4,9 +4,15 @@ from src.neural_udf_evaluation import load_results_from_single_run, compute_metr
 import os
 from itertools import product
 
+import time as T
+
+import numpy as np
 import pandas as pd
 
 def compute_and_store_evaluation_metrics(path_to_results, csv_file_name):
+
+    # Runtime
+    t0 = T.time()
 
     # Load experiment parameters
     experiment_parameters = load_json(os.path.join(path_to_results, 'experiment_parameters.json'))
@@ -57,7 +63,7 @@ def compute_and_store_evaluation_metrics(path_to_results, csv_file_name):
     path_to_metrics_df = os.path.join(experiment_parameters['path_to_results'], csv_file_name)
     df.to_csv(path_to_metrics_df)
     
-    print(f'Saved metrics to {path_to_metrics_df}')
+    print(f'Saved metrics to {path_to_metrics_df} in {np.round(T.time()-t0,1)} s.')
 
 if __name__ == '__main__':
 

@@ -1,0 +1,30 @@
+{
+    "path_to_meshes"                    : "/Users/virgilefoy/Data/ShapeNet_meshes/tables_100",
+    "path_to_results"                   : "/Users/virgilefoy/Data/ShapeNet_neural_udfs/xp_tables_10_xi_vs_n",   
+    "n_cpus"                            : 1,
+
+        "training_parameters_values"    : {
+            
+            "shape_index"                               : [0,1,2,3,4,5,6,7,8,9],
+            
+            "n_training_points"                         : [300, 500, 700, 900, 1100],
+            "proportion_training_points_from_surface"   : [0.5],
+            "oversampling_strength"                     : [0, 0.2, 0.4, 0.6, 0.8],
+
+            "n_surface_points_for_indicator"            : [2000],
+            "indicator"                                 : ["ks_log_pvalues"],
+            "k_neighbors"                               : [30],
+            "decision_threshold"                        : [1.3],
+
+            "n_epochs"                                  : [1200],
+            "batch_size"                                : [32],
+            "learning_rate"                             : [1e-4],
+            "n_blocks"                                  : [3],
+            "n_units_per_layer"                         : [64],
+
+            "random_seed"                               : [42],
+            "run_count"                                 : [0, 1, 2, 3, 4]
+        
+        }
+        
+}

@@ -77,12 +77,13 @@ def sample_training_points(mesh,
 
     udf = Udf3d_ShapeNet(mesh)
     # ambient_space_training_points = sample_uniform_box(n_ambient_space, udf.bbox)
-    ambient_space_training_points = sample_uniform_3d_ball(n_ambient_space, 0.55)
+    ambient_space_training_points = sample_uniform_3d_ball(n_ambient_space, 1.05 * np.max(np.linalg.norm(mesh.vertices, axis=1)))
     
     surface_points = np.array(sample_surface(mesh, n_surface_points_for_indicator)[0])
     
     indicator_values = compute_indicator_on_surface(surface_points, indicator, k_neighbors)
     is_warm = indicator_values > decision_threshold
+    print(f'Proportion of warm points on shape: {np.mean(is_warm)}')
     
     surface_training_points = sample_training_points_from_surface(surface_points, is_warm, n_surface//2, oversampling_strength)
     
