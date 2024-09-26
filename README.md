@@ -57,7 +57,7 @@ This will store all the evaluation metrics in the csv file ```"<path_to_results>
 
 ## Interpret results
 
-The notebook ```plot_histograms_of_improvements.ipynb``` allows to plot histograms of metrics as in the Figure 4.6 of the article. It uses data aggregation on the csv of metrics built during evaluation step. 
+The notebook ```notebooks/plot_histograms_of_improvements.ipynb``` allows to plot histograms of metrics as in the Figure 4.6 of the article. It uses data aggregation on the csv of metrics built during evaluation step. 
 
 All the plots are stored in the subfolder ```notebooks/figures.```.
 
