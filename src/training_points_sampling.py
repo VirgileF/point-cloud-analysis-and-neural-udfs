@@ -45,7 +45,14 @@ def sample_uniform_box(n_samples, bounding_box):
 
 def sample_training_points_from_surface(surface_points, is_warm, n_points, oversampling_strength):
     
+    print(f'Number of warm points on shape: {np.sum(is_warm)}')
+    if np.sum(is_warm) == 0:
+        print('No warm points for this shape.')
+        random_indices = np.random.choice(surface_points.shape[0], size=n_points, replace=True)
+        return surface_points[random_indices]
+    
     p_W = np.mean(is_warm)
+    
     new_p_W = (1-oversampling_strength)*p_W + oversampling_strength
     n_W = int(new_p_W*n_points)
     
@@ -83,7 +90,6 @@ def sample_training_points(mesh,
     
     indicator_values = compute_indicator_on_surface(surface_points, indicator, k_neighbors)
     is_warm = indicator_values > decision_threshold
-    print(f'Proportion of warm points on shape: {np.mean(is_warm)}')
     
     surface_training_points = sample_training_points_from_surface(surface_points, is_warm, n_surface//2, oversampling_strength)
     

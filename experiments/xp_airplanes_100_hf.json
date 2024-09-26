@@ -1,6 +1,6 @@
 {
-    "path_to_meshes"                    : "/Users/virgilefoy/Data/ShapeNet_meshes/chairs_100",
-    "path_to_results"                   : "/Users/virgilefoy/Data/ShapeNet_neural_udfs/xp_chairs_100",   
+    "path_to_meshes"                    : "/Users/virgilefoy/Dropbox/shapenet_meshes/airplanes",
+    "path_to_results"                   : "/Users/virgilefoy/Data/ShapeNet_neural_udfs/xp_airplanes_100_hf",   
     "n_cpus"                            : 1,
 
         "training_parameters_values"    : {

@@ -63,6 +63,7 @@ All the plots are stored in the subfolder ```notebooks/figures.```.
 ## Main references
 
 DeepSDF: https://arxiv.org/abs/1901.05103
+
 ShapeNet: https://shapenet.org/
 
 

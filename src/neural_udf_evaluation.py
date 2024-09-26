@@ -155,9 +155,13 @@ def compute_metrics(
         indicator_values = compute_indicator_on_surface(true_surface_points, indicator, k_neighbors)
         warm_points = true_surface_points[indicator_values > decision_threshold]
         cool_points = true_surface_points[indicator_values <= decision_threshold]
-    
-        metrics['abs_neural_udf_on_warm_points'] = np.abs(neural_udf(warm_points)).mean()
-        metrics['abs_neural_udf_on_cool_points'] = np.abs(neural_udf(cool_points)).mean()
+
+        if np.sum(indicator_values > decision_threshold) > 0:
+            metrics['abs_neural_udf_on_warm_points'] = np.abs(neural_udf(warm_points)).mean()
+            metrics['abs_neural_udf_on_cool_points'] = np.abs(neural_udf(cool_points)).mean()
+        else:
+            metrics['abs_neural_udf_on_warm_points'] = np.abs(neural_udf(cool_points)).mean()
+            metrics['abs_neural_udf_on_cool_points'] = np.abs(neural_udf(cool_points)).mean()
 
         metrics['correlation_loss_est'] = np.corrcoef(np.abs(neural_udf(true_surface_points)).flatten(), indicator_values)[0,1]
         is_warm = np.int32(indicator_values > decision_threshold)

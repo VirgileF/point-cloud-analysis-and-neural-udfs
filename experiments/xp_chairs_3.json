@@ -1,11 +1,11 @@
 {
-    "path_to_meshes"                    : "/Users/virgilefoy/Data/ShapeNet_meshes/chairs_100",
+    "path_to_meshes"                    : "/Users/virgilefoy/Dropbox/shapenet_meshes/chairs",
     "path_to_results"                   : "/Users/virgilefoy/Data/ShapeNet_neural_udfs/xp_chairs_3",   
     "n_cpus"                            : 1,
 
         "training_parameters_values"    : {
             
-            "shape_index"                               : [27, 35, 89],
+            "shape_index"                               : [14, 35, 89],
             
             "n_training_points"                         : [500],
             "proportion_training_points_from_surface"   : [0.5],
