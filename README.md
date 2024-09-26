@@ -28,7 +28,7 @@ Python packages needed are listed in the file ```requirements.txt```.
 
 ## Point cloud analysis
 
-To plot High Frequency Area and Pauly indicators on surfaces from ShapeNet dataset, one can use the notebook ```plot_indicators_on_surfaces.ipynb```. It mainly uses functions from python script ```point_cloud_analysis.py```.
+To plot High Frequency Area and Pauly indicators on surfaces from ShapeNet dataset (Figures 4.1, 4.2 and 4.3 in the aforementioned paper), one can use the notebook ```notebooks/plot_indicators_on_surfaces.ipynb```. It mainly uses functions from python script ```src/point_cloud_analysis.py```.
 
 ## Neural UDFs training
 
@@ -44,7 +44,7 @@ This will train the Neural UDFs of three chair surfaces. The indices of chairs, 
 
 ## Neural UDFs evaluation
 
-In order to train Neural UDFs of surfaces from ShapeNet dataset, one must run the script ```compute_and_store_evaluation_metrics.py```. The only inline parameter that needs to be specified is the path to the Neural UDFs to be evaluated. It corresponds to the parameter ```path_to_results``` specified during training. 
+In order to evaluate the precision of Neural UDFs from ShapeNet dataset, one must run the script ```compute_and_store_evaluation_metrics.py```. The only inline parameter that needs to be specified is the path to the folder containing the Neural UDFs to be evaluated. It corresponds to the parameter ```path_to_results``` specified during training. 
 
 To follow the same example, one can run:
 
@@ -53,7 +53,7 @@ python compute_and_store_evaluation_metrics.py "<path_to_results>" "<csv_file>"
 ```
 where ```"<path_to_results>"``` is the path specified in the json file ```experiments/xp_chairs_3.json```.
 
-This will store all the evaluation metrics in the csv file ```"<csv_file>"```. 
+This will store all the evaluation metrics in the csv file ```"<path_to_results>/<csv_file>"```. 
 
 ## Interpret results
 
@@ -63,7 +63,7 @@ All the plots are stored in the subfolder ```notebooks/figures.```.
 
 ## Main references
 
-DeepSDF: https://arxiv.org/abs/1901.05103
+DeepSDF: https://arxiv.org/abs/1901.05103 (git: https://github.com/facebookresearch/DeepSDF)
 
 ShapeNet: https://shapenet.org/
 
