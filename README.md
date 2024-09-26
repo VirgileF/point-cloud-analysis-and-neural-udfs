@@ -63,9 +63,15 @@ All the plots are stored in the subfolder ```notebooks/figures.```.
 
 ## Main references
 
-DeepSDF: https://arxiv.org/abs/1901.05103 (git: https://github.com/facebookresearch/DeepSDF)
+<a id="1">[1]</a> 
+Park et al. (2019)
+Deepsdf: Learning continuous signed distance functionsfor shape representation.
+Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, 165–174
+https://arxiv.org/abs/1901.05103 (git: https://github.com/facebookresearch/DeepSDF)
 
-ShapeNet: https://shapenet.org/
+Chang et al. (2015)
+Shapenet: An information-rich 3d model repository
+https://shapenet.org/
 
 
 
