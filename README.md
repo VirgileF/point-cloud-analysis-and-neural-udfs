@@ -17,6 +17,7 @@ Python packages needed are listed in the file ```requirements.txt```.
 
 - numpy 1.24.4
 - trimesh 4.4.1
+- vtk 9.3.1
 - matplotlib 3.7.5
 - scipy 1.10.1
 - scikit-learn 1.3.2
