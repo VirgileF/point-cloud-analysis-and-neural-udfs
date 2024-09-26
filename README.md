@@ -63,7 +63,7 @@ All the plots are stored in the subfolder ```notebooks/figures.```.
 
 ## Main references
 
-<a id="1">[1]</a> 
+<a id="1"> \[1\] </a> 
 Park et al. (2019)
 Deepsdf: Learning continuous signed distance functionsfor shape representation.
 Proceedings of the IEEE/CVF conference on computer vision and pattern recognition, 165–174
